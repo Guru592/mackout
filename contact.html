@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+
+
+</head>
+<body>
+
+    <!--header section-->
+    <header>
+        <nav class="navbar">
+        <div class="logo">Mackout Brands</div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <!--contact hero-->
+    <section class="contact-hero" >
+        <div class="container">
+           <h1>Let’s Create Something Unforgettable.</h1>     
+            <p>We’re always open to new collaborations, bold ideas, or just a good conversation.</p>
+        </div>
+    </section>
+
+    <!--contact main section-->
+    <section class="contact-wrapper">
+    <div class="contact-left fancy-card">
+    <div class="contact-intro" data-aos="fade-up">
+      <h2>Let’s Start Something Bold</h2>
+      <p>We believe in stories that move people — ready to begin yours?</p>
+    </div>
+
+    <div class="contact-social" data-aos="fade-up" data-aos-delay="200">
+  <p class="connect-label">Or connect with us:</p>
+  <div class="social-icons-group">
+    <a href="#" class="social-icon" aria-label="Instagram">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
+    </a>
+    <a href="#" class="social-icon" aria-label="TikTok">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" />
+    </a>
+    <a href="#" class="social-icon" aria-label="Facebook">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
+    </a>
+  </div>
+</div>
+
+  </div>
+
+
+    <!--contact form-->
+    <div class="contact-right">
+  <form id="contact-form" class="contact-form" data-aos="fade-left">
+    <h3>Send Us a Message</h3>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+     
+    </section>
+
+   <!--footer-->
+    <footer class="site-footer">
+        <div class="footer-container">
+
+        <!-- Brand + Mission -->
+        <div class="footer-brand">
+        <h2>Mackout Brands</h2>
+        <p>Bold strategy. Timeless design. Stories that connect.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="/index.html">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+        <h4>Join the Movement</h4>
+        <p>Sign up to receive inspiration and brand insights.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your email" />
+            <button type="submit">Subscribe</button>
+        </form>
+        </div>
+
+        <!-- Social Links -->
+        <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="social-icons-group">
+            <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" /></a>
+            <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" /></a>
+            <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" /></a>
+        </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Mackout Brands. All rights reserved.</p>
+    </div>
+    </footer>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/form.js"></script>
+
+</body>
+</html>
