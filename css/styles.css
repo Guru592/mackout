@@ -350,7 +350,7 @@ body {
 }
 
 .who-we-help .container {
-  overflow: visible;
+  overflow-x: visible;
 }
 
 .help-cards {
