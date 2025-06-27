@@ -76,22 +76,48 @@
   /* === Horizontal Scroll Layout for Mobile Sections === */
   .steps,
   .features,
-  .help-cards {
+  .help-cards,
+  .brand-logos {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
-    gap: 20px;
-    padding-bottom: 20px;
+    gap: 16px;
+    padding: 10px 0 20px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    position: relative;
   }
 
   .step,
   .feature,
-  .help-card {
-    flex: 0 0 80%;
-    max-width: 80%;
+  .help-card,
+  .brand-logos img {
+    flex: 0 0 70%;
+    max-width: 70%;
     scroll-snap-align: start;
+  }
+
+  /* Hide fade-in-on-scroll for mobile to avoid glitching during swipe */
+  .fade-in-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Scroll Indicators (optional visual cue) */
+  .steps::after,
+  .features::after,
+  .help-cards::after,
+  .brand-logos::after {
+    content: '← Swipe →';
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    font-size: 12px;
+    color: #ccc;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2px 6px;
+    border-radius: 12px;
   }
 }
 
@@ -126,9 +152,10 @@
   /* Adjust card widths for smaller phones */
   .step,
   .feature,
-  .help-card {
-    flex: 0 0 90%;
-    max-width: 90%;
+  .help-card,
+  .brand-logos img {
+    flex: 0 0 85%;
+    max-width: 85%;
   }
 }
 
