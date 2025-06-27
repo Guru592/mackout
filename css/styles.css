@@ -26,13 +26,46 @@ body {
   color: white;
   position: relative;
   z-index: 1000;
+  min-height: 60px;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between image and text */
+}
+
+.logo img {
+  max-height: 62px;
+  width: auto;
+  display: block;
+  
+
+}
+
+.logo span {
   font-size: 24px;
   font-weight: bold;
   color: white;
+  line-height: 1;
 }
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 32px;
+  }
+
+  .logo span {
+    font-size: 18px;
+  }
+}
+
 
 .nav-links {
   list-style: none;
@@ -96,7 +129,7 @@ body {
   }
   .nav-links a {
   width: 100%;
-  padding: 10px 0;
+  padding: 12px 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -106,6 +139,10 @@ body {
 
 .nav-links a:hover {
   color: #FFD700; /* Gold on hover */
+}
+.nav-links a:active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
 }
 
   .nav-links.active {
@@ -120,7 +157,7 @@ body {
 -------------------------------------*/
 .hero {
   background: linear-gradient(rgba(44, 42, 74, 0.7), rgba(44, 42, 74, 0.7)),
-              url('../images/ele.jpg') center/cover no-repeat;
+              url('../images/startae-team-7tXA8xwe4W4-unsplash.jpg') center/cover no-repeat;
   color: white;
   padding: 100px 10%;
   text-align: center;
