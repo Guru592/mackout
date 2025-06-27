@@ -70,6 +70,9 @@
     padding: 10px 0 20px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    padding-left: 16px;
+    padding-right: 16px;
+
   }
 
   .step,
