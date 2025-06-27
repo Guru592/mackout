@@ -47,9 +47,6 @@
   }
 
   /* Flexbox & Layout Fixes */
-  .steps,
-  .features,
-  .help-cards,
   .split-grid,
   .team-grid,
   .mv-content,
@@ -74,6 +71,27 @@
   .footer-container {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  /* === Horizontal Scroll Layout for Mobile Sections === */
+  .steps,
+  .features,
+  .help-cards {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .step,
+  .feature,
+  .help-card {
+    flex: 0 0 80%;
+    max-width: 80%;
+    scroll-snap-align: start;
   }
 }
 
@@ -103,6 +121,14 @@
   .newsletter-form input,
   .newsletter-form button {
     width: 100%;
+  }
+
+  /* Adjust card widths for smaller phones */
+  .step,
+  .feature,
+  .help-card {
+    flex: 0 0 90%;
+    max-width: 90%;
   }
 }
 
