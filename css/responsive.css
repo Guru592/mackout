@@ -61,8 +61,7 @@
   /* Horizontal scrollable cards layout with better spacing */
   .steps,
   .features,
-  .help-cards,
-  .who-we-help .help-cards {
+  .help-cards {
     display: flex !important;
     flex-direction: row !important;
     overflow-x: auto;
@@ -74,8 +73,7 @@
 
   .step,
   .feature,
-  .help-card,
-  .who-we-help .help-card {
+  .help-card {
     flex: 0 0 90%;
     max-width: 90%;
     min-height: 260px;
@@ -156,8 +154,7 @@
 
   .step,
   .feature,
-  .help-card,
-  .who-we-help .help-card {
+  .help-card {
     flex: 0 0 95%;
     max-width: 95%;
     min-height: 250px;
