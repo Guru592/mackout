@@ -35,6 +35,7 @@
   }
   h2, .why-choose-us h2, .meet-the-minds h2, .cta-section h2 {
     font-size: 1.5rem;
+    margin-bottom: 10px;
   }
   p, .our-story p, .contact-hero p {
     font-size: 1rem;
@@ -57,7 +58,7 @@
     gap: 20px;
   }
 
-  /* Horizontal scrollable cards layout */
+  /* Horizontal scrollable cards layout with better spacing */
   .steps,
   .features,
   .help-cards,
@@ -66,7 +67,7 @@
     flex-direction: row !important;
     overflow-x: auto;
     gap: 16px;
-    padding-bottom: 20px;
+    padding: 10px 0 20px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
@@ -75,13 +76,13 @@
   .feature,
   .help-card,
   .who-we-help .help-card {
-    flex: 0 0 75%;
-    max-width: 75%;
+    flex: 0 0 90%;
+    max-width: 90%;
+    min-height: 260px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 16px;
     background-color: #fff;
-    height: 220px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -106,14 +107,16 @@
     display: flex;
     flex-direction: row;
     overflow-x: auto;
-    gap: 16px;
+    gap: 20px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
   }
 
   .brand-logos img {
     flex: 0 0 auto;
-    max-height: 60px;
+    height: 70px;
+    width: auto;
     object-fit: contain;
     scroll-snap-align: start;
   }
@@ -155,13 +158,13 @@
   .feature,
   .help-card,
   .who-we-help .help-card {
-    flex: 0 0 85%;
-    max-width: 85%;
-    height: 200px;
+    flex: 0 0 95%;
+    max-width: 95%;
+    min-height: 250px;
   }
 
   .brand-logos img {
-    max-width: 80px;
+    max-width: 90px;
     height: auto;
   }
 }
