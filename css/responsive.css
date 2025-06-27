@@ -62,14 +62,16 @@
   .steps,
   .features,
   .help-cards {
-    display: flex !important;
-    flex-direction: row !important;
-    overflow-x: auto;
-    gap: 16px;
-    padding: 10px 0 20px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important; /* ✅ force horizontal */
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px 0 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
 
   .step,
   .feature,
