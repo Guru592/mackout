@@ -78,8 +78,8 @@
   .features,
   .help-cards,
   .brand-logos {
-    display: flex;
-    flex-direction: row;
+    display: flex !important;
+    flex-direction: row !important;
     overflow-x: auto;
     gap: 16px;
     padding: 10px 0 20px;
@@ -90,10 +90,17 @@
 
   .step,
   .feature,
-  .help-card,
-  .brand-logos img {
+  .help-card {
     flex: 0 0 70%;
     max-width: 70%;
+    scroll-snap-align: start;
+  }
+
+  .brand-logos img {
+    flex: 0 0 auto;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
     scroll-snap-align: start;
   }
 
@@ -152,10 +159,13 @@
   /* Adjust card widths for smaller phones */
   .step,
   .feature,
-  .help-card,
-  .brand-logos img {
+  .help-card {
     flex: 0 0 85%;
     max-width: 85%;
+  }
+
+  .brand-logos img {
+    max-width: 80px;
   }
 }
 
