@@ -3,24 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services </title>
+    <title>Our Services | Brand Strategy & Identity Audits | Mackout Brands</title>
+
+    <meta name="description" content="Explore Mackout Brands’ branding services — from brand awareness audits to visual identity and emotional connection evaluations. Build a brand that lasts." />
+
+    <meta name="keywords" content="brand strategy services, branding audits, visual identity audit, customer experience, brand perception, Mackout Brands, creative agency Kenya" />
+
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Services | Mackout Brands | Brand Strategy & Identity Audits" />
+    <meta property="og:description" content="Mackout Brands offers expert branding services including brand audits, visual storytelling, and emotional connection analysis." />
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Mackout+Brands+Services" />
+    <meta property="og:url" content="https://mackoutbrands.com/services.html" />
+
+    <!--links to css-->
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" href="css/responsive.css" />
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- AOS CSS (for animations) -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
+    <!-- Particles.js core library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!--link to favicon-->
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+
 
 
 </head>
 <body>
     <!--header section-->
-    <!--header section-->
     <header>
         <nav class="navbar">
-        <div class="logo">Mackout Brands</div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" />
+                <span>Mackout Brands</span>
+            </a>
+
+        </div>
 
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -39,14 +67,30 @@
 
     <!--hero section-->
     <section class="services-hero-reimagined">
+     <div id="particles-js"></div>
+
+
         <div class="hero-inner">
             <h1 class="typewriter-heading">
                 <span class="typewriter">Services That Transform</span>
                 
             </h1>
         <p class="fade-in-delay">Discover how strategy, story, and bold visuals align to shape unforgettable brands.</p>  
-        </div>    
+        </div>
+        
+        <!-- Scroll Cue SVG Arrow -->
+  <div class="scroll-cue">
+    <svg class="scroll-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
     </section>   
+
+
+    
+
+
 
   <!-- Services Section with Custom SVG Icons -->
 <section class="services-section">
@@ -240,6 +284,7 @@
     <script src="js/navbar.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/aos.js"></script>
-
+    <!-- Your custom particle config -->
+    <script src="js/particles.js"></script>
 </body>
 </html>
