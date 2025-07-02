@@ -187,4 +187,116 @@
   }
 }
 
+/* ABOUT PAGE MOBILE FIXES */
+
+/* Hero Section Adjustments */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 80px 20px 40px;
+    text-align: center;
+    position: relative;
+  }
+
+  .about-hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+
+  .about-hero p {
+    font-size: 1rem;
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+
+  .hero-bg-svg {
+    display: none; /* Optional: remove decorative SVG if it's awkward on small screens */
+  }
+
+  /* Our Story Section */
+  .our-story .container {
+    padding: 0 20px;
+  }
+
+  .our-story h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .our-story p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .quote-bg {
+    display: none; /* Hides decorative quote SVG on mobile for cleaner view */
+  }
+
+  /* Meet the Minds section */
+  .team-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  /* What Drives Us (Values Section) */
+  .split-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .left-title, .right-values {
+    width: 100%;
+    text-align: center;
+  }
+
+  .right-values .value-block {
+    margin-bottom: 20px;
+  }
+
+  .right-values h3 {
+    font-size: 1.2rem;
+  }
+
+  .right-values p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Optional: Further tweaks for very small screens */
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-hero p {
+    font-size: 0.95rem;
+  }
+
+  .our-story h2 {
+    font-size: 1.3rem;
+  }
+
+  .our-story p {
+    font-size: 0.95rem;
+  }
+
+  .right-values h3 {
+    font-size: 1.1rem;
+  }
+
+  .right-values p {
+    font-size: 0.95rem;
+  }
+}
+
 /* END OF responsive.css */
