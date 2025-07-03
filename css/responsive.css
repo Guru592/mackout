@@ -189,9 +189,8 @@
 
 /* ABOUT PAGE MOBILE FIXES */
 
-/* Hero Section Adjustments */
 @media (max-width: 768px) {
-  /* ABOUT HERO SECTION */
+  /* ========== ABOUT HERO SECTION ========== */
   .about-hero {
     padding: 80px 20px 100px;
     text-align: center;
@@ -226,13 +225,13 @@
     z-index: 2;
   }
 
-  /* OUR STORY SECTION */
+  /* ========== OUR STORY SECTION ========== */
   .our-story .container {
     padding: 40px 20px;
   }
 
   .our-story h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem; /* Improved hierarchy (was 1.3rem) */
     text-align: center;
     margin-bottom: 16px;
     font-weight: 600;
@@ -245,28 +244,42 @@
     margin-bottom: 14px;
   }
 
-  /* MEET THE MINDS */
+  /* ========== MEET THE MINDS SECTION ========== */
   .team-grid {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
   }
 
   .team-card {
     width: 90%;
+    max-width: 320px;
     text-align: center;
+    padding: 10px 16px; /* Improvement #2: add light padding */
+    box-shadow: none;
+    background: none;
+  }
+
+  .avatar-circle {
+    width: 64px;
+    height: 64px;
+    font-size: 1.3rem;
+    line-height: 64px;
+    margin: 0 auto 12px;
+    background-color: #d4af37;
+    color: white;
   }
 
   .team-card h3 {
     font-size: 1.2rem;
-    margin-top: 10px;
+    margin-bottom: 6px;
   }
 
   .team-card p {
     font-size: 0.95rem;
   }
 
-  /* WHAT DRIVES US SECTION */
+  /* ========== WHAT DRIVES US SECTION ========== */
   .split-grid {
     flex-direction: column;
     gap: 24px;
@@ -287,44 +300,8 @@
     line-height: 1.5;
   }
 }
-@media (max-width: 768px) {
-  .team-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-  }
 
-  .team-card {
-    width: 90%;
-    max-width: 320px;
-    text-align: center;
-    box-shadow: none;
-    background: none;
-    padding: 0;
-  }
-
-  .avatar-circle {
-    width: 64px;
-    height: 64px;
-    font-size: 1.3rem;
-    line-height: 64px;
-    margin: 0 auto 12px;
-    background-color: #d4af37;
-    color: white;
-  }
-
-  .team-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 4px;
-  }
-
-  .team-card p {
-    font-size: 0.95rem;
-  }
-}
-
-
-/* Optional: Further tweaks for very small screens */
+/* ========== FOR VERY SMALL SCREENS ========== */
 @media (max-width: 480px) {
   .about-hero h1 {
     font-size: 1.6rem;
@@ -335,7 +312,7 @@
   }
 
   .our-story h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .our-story p {
@@ -350,5 +327,6 @@
     font-size: 0.95rem;
   }
 }
+
 
 /* END OF responsive.css */
