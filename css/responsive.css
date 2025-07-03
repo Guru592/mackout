@@ -222,7 +222,7 @@
 
   .hero-bg-svg {
     position: absolute;
-    bottom: -20px; /* Pull up slightly */
+    bottom: -40px; /* Pull up slightly */
     left: 0;
     width: 100%;
     height: auto;
