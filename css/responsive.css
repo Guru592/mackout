@@ -192,7 +192,7 @@
 @media (max-width: 768px) {
   /* ========== ABOUT HERO SECTION ========== */
   .about-hero {
-    padding: 80px 20px 100px;
+    padding: 80px 20px 120px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -222,12 +222,12 @@
 
   .hero-bg-svg {
     position: absolute;
-    bottom: 0;
+    bottom:- 30px;
     left: 0;
     width: 100%;
-    height: 150%;
+    height: auto;
     z-index: 1;
-    
+    min-height: 120px;
   }
 
   .hero-content {
