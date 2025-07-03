@@ -220,17 +220,7 @@
     color: #555;
   }
 
-  .hero-bg-svg {
-    position: absolute;
-    bottom: -40px; /* Pull up slightly */
-    left: 0;
-    width: 100%;
-    height: auto;
-    min-height: 160px;
-    z-index: 1;
-    opacity: 1;
-    fill: #2C2A4A; /* Ensure fill color is visible */
-  }
+  
 
   .hero-content {
     position: relative;
