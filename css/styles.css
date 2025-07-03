@@ -454,7 +454,9 @@ body {
   height: auto;
   z-index: 1;
 }
-
+.mobile-only {
+  display: none;
+}
 .mission-values {
   background-color: #F0F4FA;
   padding: 80px 10%;

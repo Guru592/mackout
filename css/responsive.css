@@ -220,13 +220,29 @@
     color: #555;
   }
 
-  
+  .hero-bg-svg {
+    position: absolute;
+    bottom: -40px; /* Pull up slightly */
+    left: 0;
+    width: 100%;
+    height: auto;
+    min-height: 160px;
+    z-index: 1;
+    opacity: 1;
+    fill: #2C2A4A; /* Ensure fill color is visible */
+  }
 
   .hero-content {
     position: relative;
     z-index: 2;
   }
+.desktop-only {
+    display: none;
+  }
 
+  .mobile-only {
+    display: block;
+  }
   /* ========== OUR STORY SECTION ========== */
   .our-story .container {
     padding: 40px 20px;
