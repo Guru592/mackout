@@ -156,8 +156,16 @@ body {
   HERO SECTION
 -------------------------------------*/
 .hero {
-  background: linear-gradient(rgba(44, 42, 74, 0.7), rgba(44, 42, 74, 0.7)),
-              url('../images/hero.jpg') center/cover no-repeat;
+  background:
+      linear-gradient(rgba(44, 42, 74, 0.7), rgba(44, 42, 74, 0.7)),
+      image-set(
+        url("../images/hero1.webp") type("image/webp"),
+        url("../images/hero.jpg") type("image/jpeg")
+      );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   color: white;
   padding: 100px 10%;
   text-align: center;
@@ -454,9 +462,7 @@ body {
   height: auto;
   z-index: 1;
 }
-.mobile-only {
-  display: none;
-}
+
 .mission-values {
   background-color: #F0F4FA;
   padding: 80px 10%;
@@ -654,24 +660,7 @@ body {
   color: #444;
 }
 
-@media (max-width: 768px) {
-  .split-grid {
-    flex-direction: column;
-    text-align: left;
-    border: none;
-    gap: 40px;
-  }
 
-  .left-title {
-    text-align: left;
-    border-right: none;
-    padding-right: 0;
-  }
-
-  .right-values {
-    padding-left: 0;
-  }
-}
 
 
 

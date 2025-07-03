@@ -221,28 +221,14 @@
   }
 
   .hero-bg-svg {
-    position: absolute;
-    bottom: -40px; /* Pull up slightly */
-    left: 0;
-    width: 100%;
-    height: auto;
-    min-height: 160px;
-    z-index: 1;
-    opacity: 1;
-    fill: #2C2A4A; /* Ensure fill color is visible */
+    display: none;
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
   }
-.desktop-only {
-    display: none;
-  }
 
-  .mobile-only {
-    display: block;
-  }
   /* ========== OUR STORY SECTION ========== */
   .our-story .container {
     padding: 40px 20px;
@@ -310,24 +296,43 @@
 
 
   /* ========== WHAT DRIVES US SECTION ========== */
+  .values-split {
+    padding: 60px 20px;
+  }
+
   .split-grid {
     flex-direction: column;
-    gap: 24px;
-    padding: 0 20px;
+    gap: 32px;
+    padding: 0;
+  }
+
+  .left-title {
+    text-align: center;
+    padding-right: 0;
+    border: none;
   }
 
   .left-title h2 {
     font-size: 1.6rem;
+    font-weight: 700;
     text-align: center;
   }
 
-  .right-values .value-block h3 {
-    font-size: 1.2rem;
+  .right-values {
+    padding-left: 0;
+    gap: 24px;
+    text-align: center;
   }
 
-  .right-values .value-block p {
-    font-size: 1rem;
+  .value-block h3 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .value-block p {
+    font-size: 0.95rem;
     line-height: 1.5;
+    color: #444;
   }
 }
 
@@ -349,14 +354,20 @@
     font-size: 0.95rem;
   }
 
-  .right-values h3 {
+  .left-title h2 {
+    font-size: 1.4rem;
+  }
+
+  .value-block h3 {
     font-size: 1.1rem;
   }
 
-  .right-values p {
-    font-size: 0.95rem;
+  .value-block p {
+    font-size: 0.9rem;
   }
 }
+
+
 
 
 /* END OF responsive.css */
