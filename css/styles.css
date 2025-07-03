@@ -1202,14 +1202,6 @@ section {
 
 
 
-/* Quote background */
-.quote-bg {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  z-index: 0;
-}
-
 
 
 
