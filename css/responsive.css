@@ -192,7 +192,7 @@
 @media (max-width: 768px) {
   /* ========== ABOUT HERO SECTION ========== */
   .about-hero {
-    padding: 80px 20px 120px;
+    padding: 80px 20px 60px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -367,6 +367,57 @@
   }
 }
 
+/* CONTACT PAGE MOBILE FIXES */
+@media (max-width: 768px) {
+  /*HERO SECTION*/
+  .contact-hero-split {
+    flex-direction: column;
+    padding: 80px 20px 100px;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-column {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .hero-left h1 {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  .hero-left p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero-right {
+    margin-top: 20px;
+  }
+
+  .vertical-line {
+    height: 60px;
+    margin-bottom: 16px;
+  }
+
+  .label-block {
+    font-size: 0.85rem;
+    gap: 6px;
+  }
+
+  .dot-trail span {
+    width: 5px;
+    height: 5px;
+  }
+
+  .label-mid {
+    font-size: 1rem;
+  }
+}
 
 
 
