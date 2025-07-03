@@ -225,7 +225,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: clamp(100px, 25vw, 180px);
+    height: 150%;
     z-index: 1;
     
   }
