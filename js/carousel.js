@@ -1,20 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const track = document.getElementById("carousel-track-1");
-  let scrollAmount = 0;
+  // Select all carousel tracks
+  const tracks = document.querySelectorAll(".carousel-track");
 
-  setInterval(() => {
-    const cardWidth = track.querySelector(".service-card").offsetWidth + 20;
-    const maxScroll = track.scrollWidth - track.clientWidth;
+  tracks.forEach((track) => {
+    let scrollAmount = 0;
 
-    if (scrollAmount >= maxScroll) {
-      scrollAmount = 0;
-    } else {
-      scrollAmount += cardWidth;
-    }
+    setInterval(() => {
+      const cardWidth = track.querySelector(".service-card").offsetWidth + 20;
+      const maxScroll = track.scrollWidth - track.clientWidth;
 
-    track.scrollTo({
-      left: scrollAmount,
-      behavior: "smooth",
-    });
-  }, 3000);
+      if (scrollAmount >= maxScroll) {
+        scrollAmount = 0;
+      } else {
+        scrollAmount += cardWidth;
+      }
+
+      track.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }, 3000);
+  });
 });
