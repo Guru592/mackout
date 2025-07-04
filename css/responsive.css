@@ -576,6 +576,19 @@
     scroll-behavior: smooth;
   }
 }
+/* Hide desktop headings on small screens */
+@media screen and (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Hide mobile headings on large screens */
+@media screen and (min-width: 769px) {
+  .mobile-only {
+    display: none;
+  }
+}
 
 
 
