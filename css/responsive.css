@@ -547,6 +547,37 @@
     height: 24px;
   }
 }
+@media screen and (max-width: 768px) {
+  /* Hide desktop grid */
+  .services-container {
+    display: none;
+  }
+
+  /* Show carousel */
+  .services-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 0;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel-track .service-card {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
+  }
+}
+
+
 
 
 /* END OF responsive.css */

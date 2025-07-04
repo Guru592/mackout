@@ -915,6 +915,10 @@ body {
   margin: 60px auto 40px;
 }
 
+/* Hide carousel by default (for desktop) */
+.services-carousel {
+  display: none;
+}
 
 
 /* Quote Divider Section */
