@@ -256,19 +256,17 @@
   scroll-snap-align: start;
 }
 
-/* Give Mac a fixed height (default works well) */
-.mac-logo {
+
+.brand-logos img[alt="Mac"]{
   height: 90px;
   max-width: 130px;
 }
 
-/* Fix for Crisis: remove max-height cap and give more width */
-.crisis-logo {
-  height: 150px;         /* or try 70px if too small */
+
+.brand-logos img[alt="Crisis"]{
+  height: 150px;        
   max-width: 250px;
 }
-
-
 
 
 }
