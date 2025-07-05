@@ -66,16 +66,19 @@
   }
 
   @media (max-width: 768px) {
+  .how-it-works {
+    padding: 60px 20px;
+    background-color: #F9F9FB;
+    overflow-x: hidden;
+  }
+
   .steps {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
-    width: 100vw;
-    margin-left: -20px;
-    padding-left: 20px;
-    padding-right: 20px;
     gap: 16px;
+    padding: 0 20px;
     scroll-snap-type: x mandatory;
     scroll-padding-left: 20px;
     -webkit-overflow-scrolling: touch;
@@ -104,38 +107,31 @@
 
   .step .svg-icon {
     margin-bottom: 16px;
-    width: 48px;
-    height: 48px;
+    width: 64px;
+    height: 64px;
     margin-left: auto;
     margin-right: auto;
   }
 
+  .step .svg-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
   .step h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 10px;
     color: #2C2A4A;
   }
 
   .step p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #555;
     line-height: 1.5;
   }
-
-  .how-it-works h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 24px;
-    color: #2C2A4A;
-  }
-
-  .how-it-works {
-    padding: 60px 0;
-    background-color: #F9F9FB;
-  }
 }
+
 
 
   .services-container {
