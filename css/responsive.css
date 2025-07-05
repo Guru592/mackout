@@ -65,13 +65,12 @@
     gap: 20px;
   }
 
-  /* Modern swipe layout for "How It Works" and "Why Choose Mackout" */
-  .steps,
-  .features {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
+  @media (max-width: 768px) {
+  .steps {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     width: 100vw;
     margin-left: -20px;
     padding-left: 20px;
@@ -82,36 +81,62 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  .step,
-  .feature {
+  .step {
     flex: 0 0 85%;
     max-width: 85%;
     min-width: 85%;
     min-height: 260px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 24px 20px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     scroll-snap-align: start;
     text-align: center;
+    transition: transform 0.3s ease;
   }
 
-  /* Alternative layout idea for Who We Help */
-  .help-cards {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    padding: 0 20px;
+  .step:hover {
+    transform: translateY(-4px);
   }
 
-  @media (max-width: 480px) {
-    .help-cards {
-      grid-template-columns: 1fr;
-    }
+  .step .svg-icon {
+    margin-bottom: 16px;
+    width: 48px;
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto;
   }
+
+  .step h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2C2A4A;
+  }
+
+  .step p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .how-it-works h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+    color: #2C2A4A;
+  }
+
+  .how-it-works {
+    padding: 60px 0;
+    background-color: #F9F9FB;
+  }
+}
+
 
   .services-container {
     grid-template-columns: 1fr;
