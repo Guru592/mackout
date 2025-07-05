@@ -264,7 +264,7 @@
 
 /* Fix for Crisis: remove max-height cap and give more width */
 .crisis-logo {
-  height: 60px;         /* or try 70px if too small */
+  height: 150px;         /* or try 70px if too small */
   max-width: 250px;
 }
 
