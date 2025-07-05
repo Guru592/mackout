@@ -249,23 +249,25 @@
 
 .brand-logos img {
   flex: 0 0 auto;
-  height: auto;             /* Let logos control their height */
   width: auto;
-  max-height: 90px;         /* Safe upper bound for mobile & desktop */
+  height: auto;
+  max-height: 90px;
   object-fit: contain;
   scroll-snap-align: start;
 }
 
-/* Custom per-logo overrides */
-.brand-logos img[alt="Mac"]{
-  max-width:130px;
+/* Give Mac a fixed height (default works well) */
+.mac-logo {
+  height: 90px;
+  max-width: 130px;
 }
 
-
-.brand-logos img[alt="Crisis"] {
-  height: 90px;   /* force a taller height */
-  max-width: none; /* allow full width */
+/* Fix for Crisis: remove max-height cap and give more width */
+.crisis-logo {
+  height: 60px;         /* or try 70px if too small */
+  max-width: 250px;
 }
+
 
 
 
