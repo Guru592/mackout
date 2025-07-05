@@ -236,21 +236,7 @@
   color: #444;
   line-height: 1.5;
 }
-.brand-logos {
-  display: flex;
-  flex-direction: column; /* vertical stacking */
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-}
 
-.brand-logos img {
-  height: auto;
-  width: auto;
-  max-width: 80%;
-  max-height: 90px;
-  object-fit: contain;
-}
 
 
 
