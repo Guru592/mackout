@@ -210,6 +210,49 @@
     transform: none !important;
     transition: none !important;
   }
+
+  /* ========== WHO WE HELP - MOBILE SCROLL STYLE ========== */
+.help-cards {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 20px;
+  padding: 20px;
+}
+
+.help-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.help-card {
+  flex: 0 0 75%;
+  min-width: 75%;
+  max-width: 75%;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.help-card .svg-icon {
+  margin-bottom: 12px;
+}
+
+.help-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.help-card p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
 }
 
 @media (max-width: 480px) {
@@ -238,15 +281,7 @@
     width: 100%;
   }
 
-  .step,
-  .feature,
-  .help-card {
-    flex: 0 0 90%;
-    max-width: 90%;
-    min-width: 90%;
-    min-height: 250px;
-    scroll-snap-align: start;
-  }
+  
 
   .brand-logos img {
     max-width: 90px;
