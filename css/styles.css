@@ -362,22 +362,26 @@ body {
 }
 
 .help-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  margin-top: 40px;
-}
+    display: flex !important; /* Force override grid */
+    flex-direction: row !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding: 20px;
+  }
 
-.help-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 30px 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  flex: 1 1 250px;
-  max-width: 260px;
-  transition: transform 0.3s ease;
-}
+  .help-card {
+    flex: 0 0 75%;
+    min-width: 75%;
+    max-width: 75%;
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
 
 .help-card:hover {
   transform: translateY(-8px);
