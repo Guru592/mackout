@@ -238,35 +238,20 @@
 }
 .brand-logos {
   display: flex;
-  flex-direction: row;
-  overflow-x: auto;
+  flex-direction: column; /* vertical stacking */
+  align-items: center;
   gap: 20px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: 10px 20px 10px 20px;
-  justify-content: flex-start;
+  padding: 20px;
 }
 
 .brand-logos img {
-  flex: 0 0 auto;
-  width: auto;
   height: auto;
+  width: auto;
+  max-width: 80%;
   max-height: 90px;
   object-fit: contain;
-  scroll-snap-align: start;
 }
 
-
-.brand-logos img[alt="Mac"]{
-  height: 90px;
-  max-width: 130px;
-}
-
-
-.brand-logos img[alt="Crisis"]{
-  height: 150px;        
-  max-width: 250px;
-}
 
 
 }
