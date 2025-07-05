@@ -257,12 +257,13 @@
 }
 
 /* Custom per-logo overrides */
-.mac-logo {
-  height: 100px;
+.brand-logos img[alt="Mac"]{
+  max-width:130px;
 }
 
-.crisis-logo {
-  height: 100px;
+
+.brand-logos img[alt="Crisis"]{
+  max-width: 245px;
 }
 
 
