@@ -243,18 +243,28 @@
   gap: 20px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 10px;
+  padding: 10px 20px 10px 20px;
   justify-content: flex-start;
-  padding-left: 20px;
 }
 
 .brand-logos img {
   flex: 0 0 auto;
-  height: 70px;
+  height: auto;             /* Let logos control their height */
   width: auto;
+  max-height: 90px;         /* Safe upper bound for mobile & desktop */
   object-fit: contain;
   scroll-snap-align: start;
 }
+
+/* Custom per-logo overrides */
+.mac-logo {
+  height: 100px;
+}
+
+.crisis-logo {
+  height: 80px;
+}
+
 
 }
 
