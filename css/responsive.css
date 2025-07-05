@@ -187,23 +187,7 @@
     text-align: center;
   }
 
-  .brand-logos {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 20px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 10px;
-  }
-
-  .brand-logos img {
-    flex: 0 0 auto;
-    height: 70px;
-    width: auto;
-    object-fit: contain;
-    scroll-snap-align: start;
-  }
+  
 
   .fade-in-on-scroll {
     opacity: 1 !important;
@@ -252,6 +236,25 @@
   color: #444;
   line-height: 1.5;
 }
+.brand-logos {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.brand-logos img {
+  flex: 0 0 auto;
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  scroll-snap-align: start;
+}
 
 }
 
@@ -283,10 +286,7 @@
 
   
 
-  .brand-logos img {
-    max-width: 90px;
-    height: auto;
-  }
+  
 }
 
 /* ABOUT PAGE MOBILE FIXES */
