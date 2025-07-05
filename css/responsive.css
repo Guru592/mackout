@@ -251,7 +251,7 @@
   flex: 0 0 auto;
   height: auto;             /* Let logos control their height */
   width: auto;
-  max-height: 90px;         /* Safe upper bound for mobile & desktop */
+  max-height: 110px;         /* Safe upper bound for mobile & desktop */
   object-fit: contain;
   scroll-snap-align: start;
 }
