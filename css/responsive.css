@@ -67,7 +67,7 @@
 
   @media (max-width: 768px) {
   .how-it-works {
-    padding: 60px 20px;
+    padding: 60px 0;
     background-color: #F9F9FB;
     overflow-x: hidden;
   }
@@ -75,42 +75,37 @@
   .steps {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
     overflow-x: auto;
     gap: 16px;
-    padding: 0 20px;
+    padding: 0 20px; /* padding for scroll breathing room */
     scroll-snap-type: x mandatory;
     scroll-padding-left: 20px;
     -webkit-overflow-scrolling: touch;
   }
 
+  .steps::-webkit-scrollbar {
+    display: none; /* hide scroll bar on mobile */
+  }
+
   .step {
-    flex: 0 0 85%;
-    max-width: 85%;
-    min-width: 85%;
-    min-height: 260px;
+    flex: 0 0 75%;
+    max-width: 75%;
+    min-width: 75%;
     border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    padding: 24px 20px;
     background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    scroll-snap-align: start;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    scroll-snap-align: start;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-
-  .step:hover {
-    transform: translateY(-4px);
   }
 
   .step .svg-icon {
-    margin-bottom: 16px;
-    width: 64px;
-    height: 64px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
   }
 
   .step .svg-icon svg {
@@ -119,18 +114,19 @@
   }
 
   .step h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 10px;
     color: #2C2A4A;
+    margin-bottom: 8px;
   }
 
   .step p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #555;
     line-height: 1.5;
   }
 }
+
 
 
 
