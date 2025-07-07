@@ -65,110 +65,109 @@
     gap: 20px;
   }
 
-  @media (max-width: 768px) {
-  .how-it-works {
-    padding: 60px 0;
-    background-color: #F9F9FB;
-    overflow-x: hidden;
-  }
-
-  .steps {
+ @media (max-width: 768px) {
+  .flip-cards {
     display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 16px;
-    padding: 0 20px; /* padding for scroll breathing room */
-    scroll-snap-type: x mandatory;
-    scroll-padding-left: 20px;
-    -webkit-overflow-scrolling: touch;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
   }
 
-  .steps::-webkit-scrollbar {
-    display: none; /* hide scroll bar on mobile */
+  .card-flip {
+    flex: 1 1 calc(50% - 20px); /* Two per row */
+    max-width: 340px;
+    min-width: 260px;
+    height: auto;
   }
 
-  .step {
-    flex: 0 0 75%;
-    max-width: 75%;
-    min-width: 75%;
-    border-radius: 16px;
-    background-color: #fff;
+  .flip-section {
+    padding: 40px 16px;
+  }
+
+  /* Make the last card take full width but centered */
+  .flip-cards .card-flip:nth-child(3) {
+    flex: 1 1 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .card-front,
+  .card-back {
     padding: 20px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    scroll-snap-align: start;
+    align-items: center;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
   }
 
-  .step .svg-icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 12px;
+  .card-front h3,
+  .card-back h3 {
+    font-size: 20px;
   }
 
-  .step .svg-icon svg {
-    width: 100%;
-    height: 100%;
+  .card-front p,
+  .card-back p {
+    font-size: 15px;
   }
 
-  .step h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #2C2A4A;
-    margin-bottom: 8px;
-  }
-
-  .step p {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.5;
+  .step-label {
+    font-size: 48px;
+    top: 8px;
+    right: 12px;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .features {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 20px;
-    padding: 20px;
-  }
 
-  .features::-webkit-scrollbar {
-    display: none;
+@media (max-width: 768px) {
+  .features {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
   }
 
   .feature {
-    flex: 0 0 75%;
-    min-width: 75%;
-    max-width: 75%;
-    background: #fff;
-    border-radius: 16px;
-    padding: 20px;
-    scroll-snap-align: start;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    text-align: center;
+    flex: 1 1 calc(50% - 20px); /* Two per row */
+    max-width: 340px;
+    min-width: 260px;
+    margin: 0 auto;
   }
 
-  .feature .svg-icon {
-    margin-bottom: 12px;
+  /* Make the third card full width and centered */
+  .features .feature:nth-child(3) {
+    flex: 1 1 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .why-choose-us {
+    padding: 60px 20px;
+  }
+
+  .why-choose-us h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
   }
 
   .feature h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
   }
 
   .feature p {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.5;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .feature {
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .feature .step-label {
+    top: 10px;
+    right: 14px;
+    font-size: 24px;
   }
 }
+
 
 
 
@@ -196,51 +195,63 @@
   }
 
   /* ========== WHO WE HELP - MOBILE SCROLL STYLE ========== */
-.help-cards {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  gap: 20px;
-  padding: 20px;
-}
 
-.help-cards::-webkit-scrollbar {
-  display: none;
-}
-
-.help-card {
-  flex: 0 0 75%;
-  min-width: 75%;
-  max-width: 75%;
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px;
-  scroll-snap-align: start;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  text-align: center;
-}
-
-.help-card .svg-icon {
-  margin-bottom: 12px;
-}
-
-.help-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.help-card p {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.5;
-}
 
 
 
 
 }
+@media (max-width: 1024px) {
+  .who-we-help-hero {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 80px 5%;
+    gap: 24px;
+  }
+
+  .section-heading {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  .hero-card {
+    padding: 30px 20px;
+  }
+
+  .gradient-text {
+    font-size: 20px;
+  }
+
+  .hero-card p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .who-we-help-hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 60px 6%;
+  }
+
+  .section-heading {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .emoji-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  .gradient-text {
+    font-size: 18px;
+  }
+
+  .hero-card p {
+    font-size: 14px;
+  }
+}
+
 
 @media (max-width: 480px) {
   .typewriter {
