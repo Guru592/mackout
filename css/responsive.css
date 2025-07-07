@@ -66,25 +66,24 @@
   }
 
  @media (max-width: 768px) {
+  .flip-section {
+    padding: 40px 16px;
+  }
+
   .flip-cards {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
 
   .card-flip {
-    flex: 1 1 calc(50% - 20px); /* Two per row */
+    flex: 1 1 calc(50% - 20px);
     max-width: 340px;
     min-width: 260px;
     height: auto;
   }
 
-  .flip-section {
-    padding: 40px 16px;
-  }
-
-  /* Make the last card take full width but centered */
   .flip-cards .card-flip:nth-child(3) {
     flex: 1 1 100%;
     max-width: 360px;
@@ -94,8 +93,8 @@
   .card-front,
   .card-back {
     padding: 20px;
-    align-items: center;
     text-align: center;
+    align-items: center;
   }
 
   .card-front h3,
@@ -114,6 +113,7 @@
     right: 12px;
   }
 }
+
 
 
 @media (max-width: 768px) {
@@ -201,7 +201,7 @@
 
 
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .who-we-help-hero {
     grid-template-columns: repeat(2, 1fr);
     padding: 80px 5%;
