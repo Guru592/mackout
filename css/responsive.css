@@ -68,20 +68,23 @@
  @media (max-width: 768px) {
   .flip-section {
     padding: 40px 16px;
+    flex-direction: column;
+    align-items: center;
   }
 
   .flip-cards {
-    flex-direction: row;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    width: 100%;
   }
 
   .card-flip {
-    flex: 1 1 calc(50% - 20px);
+    flex: 1 1 calc(50% - 20px);  /* Two per row */
     max-width: 340px;
     min-width: 260px;
-    height: auto;
+    height: 260px; /* ✅ Set height to avoid collapsed cards */
   }
 
   .flip-cards .card-flip:nth-child(3) {
@@ -90,11 +93,16 @@
     margin: 0 auto;
   }
 
+  .card-inner {
+    height: 100%; /* ✅ Ensure full height for inner flip */
+  }
+
   .card-front,
   .card-back {
     padding: 20px;
     text-align: center;
     align-items: center;
+    height: 100%; /* ✅ Force content to stretch full height */
   }
 
   .card-front h3,
