@@ -65,7 +65,7 @@
     gap: 20px;
   }
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
   .flip-section {
     padding: 40px 16px;
     flex-direction: column;
@@ -73,50 +73,57 @@
   }
 
   .flip-cards {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    width: 100%;
+    gap: 16px;
   }
 
   .card-flip {
-    flex: 1 1 calc(50% - 20px);  /* Two per row */
-    max-width: 340px;
-    min-width: 260px;
-    height: 260px; /* ✅ Set height to avoid collapsed cards */
+    flex: 1 1 calc(48% - 12px);
+    max-width: 280px;
+    min-width: 200px;
+    height: auto;
   }
 
+  /* Last card full width */
   .flip-cards .card-flip:nth-child(3) {
     flex: 1 1 100%;
-    max-width: 360px;
+    max-width: 300px;
     margin: 0 auto;
   }
 
+  /* Disable flipping animation on mobile */
   .card-inner {
-    height: 100%; /* ✅ Ensure full height for inner flip */
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
   }
 
-  .card-front,
-  .card-back {
+  .card-front, .card-back {
+    position: relative;
+    transform: none;
+    backface-visibility: visible;
     padding: 20px;
     text-align: center;
     align-items: center;
-    height: 100%; /* ✅ Force content to stretch full height */
+    height: auto;
   }
 
-  .card-front h3,
-  .card-back h3 {
-    font-size: 20px;
+  .card-back {
+    display: none; /* hide the back side */
   }
 
-  .card-front p,
-  .card-back p {
-    font-size: 15px;
+  .card-front h3 {
+    font-size: 18px;
+  }
+
+  .card-front p {
+    font-size: 14px;
   }
 
   .step-label {
-    font-size: 48px;
+    font-size: 40px;
     top: 8px;
     right: 12px;
   }
