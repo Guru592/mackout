@@ -248,6 +248,7 @@ body {
   perspective: 1000px;
   border-radius: 20px;
   overflow: hidden;
+  flex: 0 0 auto;
 }
 
 /* === Neon Border === */
@@ -351,11 +352,12 @@ body {
 
 @media (min-width: 1024px) {
   .flip-cards .card-flip:nth-child(3) {
-    flex: 1 1 100%;
-    max-width: 360px;
-    margin: 0 auto;
+    width: 360px;
+    margin: 0 auto; /* Center */
   }
 }
+
+
 
 
 
