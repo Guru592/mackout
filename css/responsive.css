@@ -77,75 +77,72 @@
   }
 
   @media (max-width: 768px) {
-    .flip-section {
-      padding: 40px 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .flip-cards {
-      display: flex;
-      /* ✅ Make sure this is here */
-      flex-direction: row;
-      /* horizontal row */
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-    }
-
-    .card-flip {
-      flex: 1 1 calc(50% - 12px);
-      /* ✅ Two cards per row */
-      max-width: 280px;
-      min-width: 160px;
-      height: auto;
-    }
-
-    .flip-cards .card-flip:nth-child(3) {
-      flex: 1 1 100%;
-      /* ✅ Full width for 3rd card */
-      max-width: 300px;
-      margin: 0 auto;
-    }
-
-    /* Optional: simplify on mobile */
-    .card-inner {
-      transform: none !important;
-      animation: none !important;
-      transition: none !important;
-    }
-
-    .card-front,
-    .card-back {
-      position: relative;
-      transform: none;
-      backface-visibility: visible;
-      padding: 20px;
-      text-align: center;
-      align-items: center;
-      height: auto;
-    }
-
-    .card-back {
-      display: none;
-      /* Show only front on mobile */
-    }
-
-    .card-front h3 {
-      font-size: 18px;
-    }
-
-    .card-front p {
-      font-size: 14px;
-    }
-
-    .step-label {
-      font-size: 36px;
-      top: 8px;
-      right: 12px;
-    }
+  .flip-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 16px;
   }
+
+  .flip-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .card-flip {
+    width: 90%;
+    max-width: 340px;
+    border-radius: 20px;
+    height: auto;
+    perspective: none;
+  }
+
+  /* Disable flip animation */
+  .card-inner {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .card-front,
+  .card-back {
+    position: relative;
+    transform: none;
+    backface-visibility: visible;
+    padding: 24px;
+    text-align: center;
+    align-items: center;
+    height: auto;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    border-radius: 20px;
+  }
+
+  .card-back {
+    display: none; /* Only show front on mobile */
+  }
+
+  .card-front h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .card-front p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555;
+  }
+
+  .step-label {
+    font-size: 40px;
+    top: 10px;
+    right: 12px;
+    opacity: 0.07;
+  }
+}
+
 
 
 

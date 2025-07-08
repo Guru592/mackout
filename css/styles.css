@@ -348,6 +348,12 @@ body {
   pointer-events: none;
 }
 
+/* Always force the 3rd card to the next line and center it */
+.flip-cards .card-flip:nth-child(3) {
+  flex: 1 1 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
 
 
 
@@ -379,12 +385,7 @@ body {
 }
 
 
-@media (min-width: 768px) {
-  .features {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
+
 
 /* === Card Styling === */
 .feature {
@@ -430,6 +431,12 @@ body {
   color: #555;
   line-height: 1.6;
 }
+/* Force last card to center and stack below */
+.features .feature:nth-child(3) {
+  flex: 1 1 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
 
 
 
@@ -444,8 +451,16 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
   justify-content: center;
-  align-items: start;
+  align-items: stretch;
 }
+@media (min-width: 1024px) {
+  .who-we-help-hero {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
 .section-heading {
   text-align: center;
   font-size: 36px;
@@ -467,6 +482,11 @@ body {
   transition: all 0.4s ease;
   border-top: 4px solid #1abc9c;
   text-align: center;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* Emoji Icons */
