@@ -620,6 +620,20 @@
   .contact-form button {
     font-size: 1rem;
   }
+
+  .social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-handle {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: #e0dcdc;
+    text-align: center;
+  }
+
 }
 
 /* ========== SERVICES HERO - MOBILE/TABLET STYLES ========== */
@@ -734,6 +748,23 @@
   }
 
   
+}
+@media (max-width: 600px) {
+  .footer-social .social-icons-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer-social .social-item {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .footer-social .footer-handle {
+    margin-top: 0;
+    font-size: 0.9rem;
+  }
 }
 
 

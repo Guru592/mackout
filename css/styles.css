@@ -1365,6 +1365,18 @@ section {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-handle {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #e0dcdc;
+  text-align: center;
+}
 
 
 
@@ -1531,6 +1543,19 @@ section {
   border-radius: 50%;
   filter: grayscale(100%);
   transition: all 0.3s ease;
+}
+.footer-social .social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.footer-social .footer-handle {
+  margin-top: 4px;
+  color: #888;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .footer-social a:hover img {
