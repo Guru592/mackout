@@ -190,6 +190,15 @@ body {
   line-height: 1.6;
   margin-bottom: 30px;
 }
+.tagline {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffffcc; /* Slight transparency for elegance */
+  margin-top: -10px; /* Slight overlap with h1 for compact look */
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  font-style: italic;
+}
 
 
 /*-------------------------------------

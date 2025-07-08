@@ -726,6 +726,15 @@
     display: none;
   }
 }
+@media (max-width: 768px) {
+  .tagline {
+    font-size: 16px;
+    margin-top: -6px;
+    margin-bottom: 20px;
+  }
+
+  
+}
 
 
 
