@@ -1535,14 +1535,14 @@ section {
   gap: 14px;
 }
 .footer-social {
-  width: 100%;
-  max-width: 100%;
+  grid-column: 1 / -1; /* span full width in the grid */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
+
 
 .footer-social img {
   width: 48px;
