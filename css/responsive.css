@@ -5,15 +5,18 @@
    Just link it after your main stylesheet
 ========================================================== */
 
-@media screen and (max-width: 768px)  {
+@media screen and (max-width: 768px) {
+
   /* Navbar Adjustments */
   .navbar {
     padding: 15px 5%;
   }
+
   .nav-links {
     right: 5%;
     width: 90%;
   }
+
   .logo {
     font-size: 20px;
   }
@@ -41,18 +44,26 @@
   }
 
   /* Global Typography Scaling */
-  h1, .about-hero h1 {
+  h1,
+  .about-hero h1 {
     font-size: 1.8rem;
   }
-  h2, .why-choose-us h2, .meet-the-minds h2, .cta-section h2 {
+
+  h2,
+  .why-choose-us h2,
+  .meet-the-minds h2,
+  .cta-section h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
   }
-  p, .our-story p, .contact-hero p {
+
+  p,
+  .our-story p,
+  .contact-hero p {
     font-size: 1rem;
   }
 
-  
+
 
   /* Flexbox & Layout Fixes */
   .split-grid,
@@ -65,123 +76,132 @@
     gap: 20px;
   }
 
-@media (max-width: 768px) {
-  .flip-section {
-    padding: 40px 16px;
-    flex-direction: column;
-    align-items: center;
+  @media (max-width: 768px) {
+    .flip-section {
+      padding: 40px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .flip-cards {
+      display: flex;
+      /* ✅ Make sure this is here */
+      flex-direction: row;
+      /* horizontal row */
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .card-flip {
+      flex: 1 1 calc(50% - 12px);
+      /* ✅ Two cards per row */
+      max-width: 280px;
+      min-width: 160px;
+      height: auto;
+    }
+
+    .flip-cards .card-flip:nth-child(3) {
+      flex: 1 1 100%;
+      /* ✅ Full width for 3rd card */
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    /* Optional: simplify on mobile */
+    .card-inner {
+      transform: none !important;
+      animation: none !important;
+      transition: none !important;
+    }
+
+    .card-front,
+    .card-back {
+      position: relative;
+      transform: none;
+      backface-visibility: visible;
+      padding: 20px;
+      text-align: center;
+      align-items: center;
+      height: auto;
+    }
+
+    .card-back {
+      display: none;
+      /* Show only front on mobile */
+    }
+
+    .card-front h3 {
+      font-size: 18px;
+    }
+
+    .card-front p {
+      font-size: 14px;
+    }
+
+    .step-label {
+      font-size: 36px;
+      top: 8px;
+      right: 12px;
+    }
   }
 
-  .flip-cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
+
+
+
+  @media (max-width: 768px) {
+    .features {
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .feature {
+      flex: 1 1 calc(50% - 20px);
+      /* Two per row */
+      max-width: 340px;
+      min-width: 260px;
+      margin: 0 auto;
+    }
+
+    /* Make the third card full width and centered */
+    .features .feature:nth-child(3) {
+      flex: 1 1 100%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .why-choose-us {
+      padding: 60px 20px;
+    }
+
+    .why-choose-us h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .feature h3 {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .feature p {
+      font-size: 15px;
+      text-align: center;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .feature .step-label {
+      top: 10px;
+      right: 14px;
+      font-size: 24px;
+    }
   }
-
-  .card-flip {
-    flex: 1 1 calc(48% - 12px);
-    max-width: 280px;
-    min-width: 200px;
-    height: auto;
-  }
-
-  /* Last card full width */
-  .flip-cards .card-flip:nth-child(3) {
-    flex: 1 1 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  /* Disable flipping animation on mobile */
-  .card-inner {
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
-  }
-
-  .card-front, .card-back {
-    position: relative;
-    transform: none;
-    backface-visibility: visible;
-    padding: 20px;
-    text-align: center;
-    align-items: center;
-    height: auto;
-  }
-
-  .card-back {
-    display: none; /* hide the back side */
-  }
-
-  .card-front h3 {
-    font-size: 18px;
-  }
-
-  .card-front p {
-    font-size: 14px;
-  }
-
-  .step-label {
-    font-size: 40px;
-    top: 8px;
-    right: 12px;
-  }
-}
-
-
-
-@media (max-width: 768px) {
-  .features {
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .feature {
-    flex: 1 1 calc(50% - 20px); /* Two per row */
-    max-width: 340px;
-    min-width: 260px;
-    margin: 0 auto;
-  }
-
-  /* Make the third card full width and centered */
-  .features .feature:nth-child(3) {
-    flex: 1 1 100%;
-    max-width: 360px;
-    margin: 0 auto;
-  }
-
-  .why-choose-us {
-    padding: 60px 20px;
-  }
-
-  .why-choose-us h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
-
-  .feature h3 {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .feature p {
-    font-size: 15px;
-    text-align: center;
-  }
-
-  .feature {
-    text-align: center;
-    padding: 30px 20px;
-  }
-
-  .feature .step-label {
-    top: 10px;
-    right: 14px;
-    font-size: 24px;
-  }
-}
 
 
 
@@ -201,7 +221,7 @@
     text-align: center;
   }
 
-  
+
 
   .fade-in-on-scroll {
     opacity: 1 !important;
@@ -216,6 +236,7 @@
 
 
 }
+
 @media (max-width: 768px) {
   .who-we-help-hero {
     grid-template-columns: repeat(2, 1fr);
@@ -294,14 +315,15 @@
     width: 100%;
   }
 
-  
 
-  
+
+
 }
 
 /* ABOUT PAGE MOBILE FIXES */
 
 @media (max-width: 768px) {
+
   /* ========== ABOUT HERO SECTION ========== */
   .about-hero {
     padding: 80px 20px 60px;
@@ -347,7 +369,8 @@
   }
 
   .our-story h2 {
-    font-size: 1.4rem; /* Improved hierarchy (was 1.3rem) */
+    font-size: 1.4rem;
+    /* Improved hierarchy (was 1.3rem) */
     text-align: center;
     margin-bottom: 16px;
     font-weight: 600;
@@ -374,7 +397,7 @@
     padding: 20px 18px;
     background: white;
     border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   }
 
   .avatar-circle {
@@ -402,7 +425,7 @@
 
 @media (max-width: 480px) {
   .team-card {
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   }
 
 
@@ -481,6 +504,7 @@
 
 /* CONTACT PAGE MOBILE FIXES */
 @media (max-width: 768px) {
+
   /*HERO SECTION*/
   .contact-hero-split {
     flex-direction: column;
@@ -529,7 +553,8 @@
   .label-mid {
     font-size: 1rem;
   }
-    /*CONTACT SECTION*/
+
+  /*CONTACT SECTION*/
   .contact-wrapper {
     flex-direction: column;
     padding: 60px 20px;
@@ -573,12 +598,12 @@
   }
 
   .social-icon img {
-  width: 100%;
-  max-width: 40px;
-  height: auto;
-  padding: 8px;
-  box-sizing: border-box;
-}
+    width: 100%;
+    max-width: 40px;
+    height: auto;
+    padding: 8px;
+    box-sizing: border-box;
+  }
 
 
   .contact-form {
@@ -597,7 +622,7 @@
 
   .contact-form button {
     font-size: 1rem;
-  }  
+  }
 }
 
 /* ========== SERVICES HERO - MOBILE/TABLET STYLES ========== */
@@ -659,7 +684,9 @@
     height: 24px;
   }
 }
+
 @media screen and (max-width: 768px) {
+
   /* Hide desktop grid */
   .services-container {
     display: none;
@@ -688,6 +715,7 @@
     scroll-behavior: smooth;
   }
 }
+
 /* Hide desktop headings on small screens */
 @media screen and (max-width: 768px) {
   .desktop-only {
