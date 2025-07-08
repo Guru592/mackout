@@ -348,11 +348,13 @@ body {
   pointer-events: none;
 }
 
-/* Always force the 3rd card to the next line and center it */
-.flip-cards .card-flip:nth-child(3) {
-  flex: 1 1 100%;
-  max-width: 360px;
-  margin: 0 auto;
+
+@media (min-width: 1024px) {
+  .flip-cards .card-flip:nth-child(3) {
+    flex: 1 1 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
 }
 
 
@@ -445,21 +447,31 @@ body {
 /* WHO WE HELP - Hero Style */
 .who-we-help-hero {
   padding: 100px 5%;
- background: radial-gradient(circle at top left, #fdfdfd, #f6fbfc);
+  background: radial-gradient(circle at top left, #fdfdfd, #f6fbfc);
 
+  /* ❌ REMOVE grid-related styles from here */
+  display: flex;               /* ✔ center the inner container */
+  justify-content: center;
+}
+
+/* ✅ Grid layout belongs here */
+.inner-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
   justify-content: center;
   align-items: stretch;
+  width: 100%;
+  max-width: 1024px;
 }
+
 @media (min-width: 1024px) {
-  .who-we-help-hero {
+  .inner-container {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
-    margin: 0 auto;
   }
 }
+
+
 
 .section-heading {
   text-align: center;
