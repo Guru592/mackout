@@ -26,14 +26,27 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
     <link rel="manifest" href="favicon/site.webmanifest" />
 
-    <!-- Preload WebP background image -->
-    <link rel="preload" as="image" href="images/hero1.webp" type="image/webp">
+    
 
     <!-- link to css -->
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
+
+    <!-- Loader -->
+      <!-- Loader -->
+<div id="loader">
+  <div class="loader-content">
+    <div class="dot-bounce">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="loader-text">Loading Mackout Brands…</div>
+  </div>
+</div>
+
+
+
 
     <!--header section-->
     <header>
@@ -62,16 +75,18 @@
     </header>
 
     <!--hero section-->
-    <section class="hero">
-        <div class="hero-content fade-in-up">
-            <h1>Elevate Your Brand Clarity</h1>
-            
-            <div class="tagline">Strengthening Brands</div>
+    <!-- Hero Section -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h1 class="fade-in-up" id="heroHeading">Elevate Your Brand Clarity</h1>
+    <div class="tagline fade-in-up" id="heroTagline">Strengthening Brands</div>
+    <p class="fade-in-up" id="heroText">
+      We audit your messaging, align your communication, and help your brand speak confidently to your audience.
+    </p>
+    <a href="contact.html" class="btn fade-in-up" id="heroButton">Request a Free Audit</a>
+  </div>
+</section>
 
-            <p>We audit your messaging, align your communication, and help your brand speak confidently to your audience.</p>
-            <a href="contact.html" class="btn"> Request a Free Audit </a>
-        </div>   
-    </section>
 
     <!-- How it Works Section -->
         <!-- === How It Works Section === -->
@@ -297,7 +312,7 @@
     <script src="js/navbar.js"></script>
     <script src="js/scrollAnimations.js"></script>
     <script src="js/flip.js"></script>
-
+    <script src="js/loader.js"></script>
 
 
 </body>
