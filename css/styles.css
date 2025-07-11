@@ -298,6 +298,7 @@ body {
   HOW IT WORKS SECTION
 -------------------------------------*/
 /* === Section Layout === */
+/* === Section Layout === */
 .flip-section {
   display: flex;
   justify-content: center;
@@ -308,6 +309,7 @@ body {
   background-color: #F0F4FA;
   font-family: 'Segoe UI', sans-serif;
 }
+
 .flip-section h2 {
   font-size: 36px;
   margin-bottom: 40px;
@@ -322,18 +324,18 @@ body {
   flex-wrap: wrap;
 }
 
-/* === Card Wrapper === */
+/* === Card Container === */
 .card-flip {
   position: relative;
   width: 360px;
   height: 250px;
-  perspective: 1000px;
+  perspective: 1000px; /* No longer needed for flip, but can be left */
   border-radius: 20px;
   overflow: hidden;
   flex: 0 0 auto;
 }
 
-/* === Neon Border === */
+/* === Neon Border Animation === */
 .card-flip::before {
   content: '';
   position: absolute;
@@ -351,40 +353,20 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* === Inner Card === */
+/* === Inner Card Wrapper (No Flip) === */
 .card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
-
-  /* ✅ Default state: flipped to show back */
-  transform: rotateY(180deg);
-  transition: transform 1s ease;
-
   border-radius: inherit;
   z-index: 1;
 }
 
-/* ✅ Flip to front when this class is added */
-.card-inner.flip-in {
-  transform: rotateY(0deg);
-}
-
-
-
-
-
-
-
-
-/* === Front & Back Faces === */
-.card-front, .card-back {
-  position: absolute;
+/* === Card Front Only — Flip Removed === */
+.card-front {
+  position: relative;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
-  backface-visibility: hidden;
   border-radius: 20px;
   padding: 30px;
   display: flex;
@@ -398,28 +380,21 @@ body {
   color: #2C2A4A;
 }
 
-/* === Back Face Rotation === */
-.card-back {
-  transform: rotateY(180deg);
-}
-
-/* === Headings and Paragraphs === */
-.card-front h3,
-.card-back h3 {
+/* === Headings and Paragraphs for Front === */
+.card-front h3 {
   margin-top: 0;
   color: #1abc9c;
   font-size: 22px;
   margin-bottom: 12px;
 }
 
-.card-front p,
-.card-back p {
+.card-front p {
   font-size: 16px;
   color: #555;
   line-height: 1.5;
 }
 
-/* === Step Number === */
+/* === Step Number Overlay === */
 .step-label {
   position: absolute;
   top: 12px;
@@ -430,14 +405,15 @@ body {
   opacity: 0.1;
   pointer-events: none;
 }
-
-
-@media (min-width: 1024px) {
-  .flip-cards .card-flip:nth-child(3) {
-    width: 360px;
-    margin: 0 auto; /* Center */
-  }
+.card-flip:hover .card-front {
+  transform: scale(1.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
+
+.card-front {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 
 
 
@@ -641,23 +617,65 @@ body {
   ANIMATIONS
 -------------------------------------*/
 /* === Fade In Up Animation === */
+/* Animation keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation initially disabled */
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Animation only runs after body.loaded is set */
+body.loaded .fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
+/* Optional staggered delay */
+body.loaded .fade-in-up:nth-of-type(1) { animation-delay: 0.2s; }
+body.loaded .fade-in-up:nth-of-type(2) { animation-delay: 0.4s; }
+body.loaded .fade-in-up:nth-of-type(3) { animation-delay: 0.6s; }
+body.loaded .fade-in-up:nth-of-type(4) { animation-delay: 0.8s; }
+
+.fade-in-contact {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInContact 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInContact {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 .fade-in-on-scroll {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.6s ease-out;
+}
+/* Optional: improve transition for buttons */
+.btn.fade-in-up {
+  display: inline-block; /* ✅ Enables transform animation */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+body.loaded .btn.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.8s;
 }
 
 .about-hero {
