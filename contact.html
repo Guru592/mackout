@@ -24,197 +24,126 @@
     <link rel="manifest" href="favicon/site.webmanifest" />
 
     <!--css-->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/contact.css" />
     <link rel="stylesheet" href="css/responsive.css" />
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-
-    <!--header section-->
-    <header>
-        <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.png" />
-                <span>Mackout Brands</span>
-            </a>
-
-        </div>
-
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        </nav>
-    </header>
-
-    <!--contact hero-->
-   <section class="contact-hero-split">
-   
-
-
-  <div class="hero-column hero-left fade-in-contact">
-    <h1>Let’s Create Something Unforgettable.</h1>
-    <p>We’re always open to new collaborations, bold ideas, or just a good conversation.</p>
-  </div>
-
-  <div class="hero-column hero-right fade-in-contact">
-    <div class="vertical-line"></div>
-    <div class="label-block">
-      <span class="label-top">Connect</span>
-
-      <!--Dot trail-->
-      <div class="dot-trail">
+      <!--hamburger menu icon-->
+    <div class="menu-icon" id="menuToggle">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+    </div>
+    <!-- 🔹 Blur layer (this is the new part) -->
+<div class="blur-background" id="blurBackground"></div>
+    <!--fullscreen menu overlay-->
+    <div class="menu-overlay" id="menuOverlay">
       
-      <span class="label-bottom">Mackout Brands</span>
+      <ul class="menu-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        
+      </ul>
+      
     </div>
-  </div>
-</section>
+    <div class="contact-container" id="contactContainer">
 
-
-
-
-    <!--contact main section-->
-    <section class="contact-wrapper">
-    <div class="contact-left fancy-card">
-    <div class="contact-intro" data-aos="fade-up">
-      <h2>Let’s Start Something Bold</h2>
-      <p>We believe in stories that move people — ready to begin yours?</p>
+  <!-- Panel 1 -->
+  <section class="panel panel-1">
+    <div class="content">
+      <h1>Every transformation begins with a conversation.</h1>
+      <p>Let’s start yours.</p>
     </div>
+  </section>
 
-    <div class="contact-social" data-aos="fade-up" data-aos-delay="200">
-  <p class="connect-label">Or connect with us:</p>
-  <div class="social-icons-group">
-  <div class="social-item">
-    <a href="https://www.instagram.com/mackout_brands?igsh=d3dtbnQydGN5MWsz" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
-    </a>
-    <span class="social-handle">@mackout_brands</span>
-  </div>
+  <!-- Panel 2 -->
+  <section class="panel panel-2">
+    <div class="content contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Tell us your story..." required></textarea>
+      <button type="submit">Begin the Dialogue →</button>
+    </div>
+  </section>
 
-  <div class="social-item">
-    <a href="https://www.tiktok.com/@_mackout_?_t=ZM-8xrKtuIyfck&_r=1" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" />
-    </a>
-    <span class="social-handle">@_mackout_</span>
-  </div>
-
-  <div class="social-item">
-    <a href="https://www.facebook.com/profile.php?id=61573459897344" target="_blank" rel="noopener noreferrer"class="social-icon" aria-label="Facebook">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
-    </a>
-    <span class="social-handle">@Mackout Brands</span>
-  </div>
-</div>
-
-</div>
-
-  </div>
-
-
-    <!--contact form-->
-    <div class="contact-right">
-  <form id="contact-form" class="contact-form" data-aos="fade-left">
-    <h3>Send Us a Message</h3>
-
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" placeholder="Your full name" required />
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="you@example.com" required />
-
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
-
-    <button type="submit">Send Message</button>
-  </form>
-</div>
-     
-    </section>
-
-   <!--footer-->
+  <!-- Panel 3 -->
+  <section class="panel panel-3">
     <footer class="site-footer">
         <div class="footer-container">
+          
+          <!-- Brand + Mission -->
+          <div class="footer-brand">
+            <h2>Mackout Brands</h2>
+            <p>Bold strategy. Timeless design. Stories that connect.</p>
+          </div>
 
-        <!-- Brand + Mission -->
-        <div class="footer-brand">
-        <h2>Mackout Brands</h2>
-        <p>Bold strategy. Timeless design. Stories that connect.</p>
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="/index.html">Home</a>
+            <a href="/services.html">Services</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <h4>Join the Movement</h4>
+            <p>Sign up to receive inspiration and brand insights.</p>
+            <form class="newsletter-form" aria-label="Newsletter signup form">
+              <input type="email" placeholder="Your email" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- Social Links -->
+          <div class="footer-social">
+            <h4>Connect</h4>
+            <div class="social-icons-group">
+              <div class="social-item">
+                <a href="https://www.instagram.com/mackout_brands" target="_blank" rel="noopener noreferrer">
+                  <div class="icon-circle">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
+                  </div>
+                </a>
+                <span>@mackout_brands</span>
+              </div>
+              <div class="social-item">
+                <a href="https://www.tiktok.com/@_mackout_" target="_blank" rel="noopener noreferrer">
+                  <div class="icon-circle">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" />
+                  </div>
+                </a>
+                <span>@_mackout_</span>
+              </div>
+              <div class="social-item">
+                <a href="https://www.facebook.com/profile.php?id=61573459897344" target="_blank" rel="noopener noreferrer">
+                  <div class="icon-circle">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
+                  </div>
+                </a>
+                <span>@Mackout Brands</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Quick Links -->
-        <div class="footer-links">
-        <h4>Quick Links</h4>
-        <a href="/index.html">Home</a>
-        <a href="/services.html">Services</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
+        <!-- Copyright -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 Mackout Brands. All rights reserved.</p>
         </div>
+      </footer>
+  </section>
+</div>
 
-        <!-- Newsletter -->
-        <div class="footer-newsletter">
-        <h4>Join the Movement</h4>
-        <p>Sign up to receive inspiration and brand insights.</p>
-        <form class="newsletter-form">
-            <input type="email" placeholder="Your email" />
-            <button type="submit">Subscribe</button>
-        </form>
-        </div>
-
-        <!-- Social Links -->
-        <div class="footer-social">
-        <h4>Connect</h4>
-        <div class="social-icons-group">
-    <div class="social-item">
-      <a href="https://www.instagram.com/mackout_brands?igsh=d3dtbnQydGN5MWsz" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
-      </a>
-      <span class="footer-handle">@mackout_brands</span>
-    </div>
-    <div class="social-item">
-      <a href="https://www.tiktok.com/@_mackout_?_t=ZM-8xrKtuIyfck&_r=1" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" />
-      </a>
-      <span class="footer-handle">@_mackout_</span>
-    </div>
-    <div class="social-item">
-      <a href="https://www.facebook.com/profile.php?id=61573459897344" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
-      </a>
-      <span class="footer-handle">@Mackout Brands</span>
-    </div>
-  </div>
-
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2025 Mackout Brands. All rights reserved.</p>
-    </div>
-    </footer>
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-    AOS.init();
-    </script>
-    <script src="js/navbar.js"></script>
-    <script type="module" src="js/firebase.js"></script>
-    <script type="module" src="js/form.js"></script>
-
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/navbar.js"></script>
 </body>
 </html>

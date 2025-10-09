@@ -1,0 +1,879 @@
+/* About Page styles */
+/* about.css */
+/* ----------------------------
+   GLOBAL RESET + BASE
+----------------------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: Inter, system-ui, sans-serif;
+  overflow: hidden;
+}
+/* Hamburger Icon */
+.menu-icon {
+  position: fixed;
+  top: 40px;
+  right: 50px;
+  cursor: pointer;
+  z-index: 1000;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.2s ease;
+  transform-origin: center;
+}
+
+
+/* Morph when active */
+.menu-icon.active span:nth-child(1) {
+  transform: translateY(13px) rotate(45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: translateY(-13px) rotate(-45deg);
+}
+
+
+
+
+
+/* Overlay Menu */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.95);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 999;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menu-links {
+  list-style: none;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 3rem;
+  padding: 0;
+}
+
+.menu-links li {
+  margin: 20px 0;
+}
+
+.menu-links a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+.menu-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.menu-links a:hover::after {
+  width: 100%;
+}
+
+/* Close Icon Styling as List Item */
+.close-icon {
+  display: inline-block;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+  margin-top: 40px; /* Spacing below Contact */
+}
+
+.close-icon:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+
+/* Blur Background Layer */
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 998; /* Just below menu-overlay */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.blur-background.active {
+  opacity: 1;
+  pointer-events: all;
+}
+/* ----------------------------
+   WRAPPER & PANELS
+----------------------------- */
+.about-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* hide offscreen panels */
+  position: relative;
+}
+.about-track {
+  display: block;
+  height: 100%;
+  
+  width: 100%;
+  position:relative
+}
+.panel {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1.4s ease, transform 1.4s ease;
+  z-index: 0;
+}
+.panel.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+
+/* ----------------------------
+   PANEL 1 — STATEMENT
+----------------------------- */
+.panel-statement {
+  background: radial-gradient(circle at center, #0f0f0f 0%, #000 100%);
+  position: relative;
+  overflow: hidden;
+}
+/* Animated gradient glow */
+.panel-statement::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(from 180deg at 50% 50%, #e6c36b44, #ffffff11, #e6c36b44);
+  animation: rotateGlow 12s linear infinite;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+}
+
+@keyframes rotateGlow {
+  to { transform: rotate(360deg); }
+}
+
+.statement {
+  font-size: clamp(28px, 6vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+}
+.statement .accent {
+  color: #e6c36b;
+  font-style: italic;
+  position: relative;
+}
+.statement .accent::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 100%; height: 2px;
+  background: #e6c36b;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underlineReveal 1.8s ease forwards 1.2s;
+}
+@keyframes underlineReveal {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.sub {
+  margin-top: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #bbb;
+}
+/* Animate headline + sub on load */
+.panel-statement .statement,
+.panel-statement .sub {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.4s ease forwards;
+}
+
+.panel-statement .sub {
+  animation-delay: 0.8s; /* Sub appears after headline */
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Floating particles */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particles span {
+  position: absolute;
+  bottom: -10px;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(100vh) scale(0.5); opacity: 0; }
+  20% { opacity: 1; }
+  to   { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
+
+/* ----------------------------
+   PANEL 2 — WHO WE ARE
+----------------------------- */
+.panel-who {
+  background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+}
+
+/* Subtle texture overlay */
+.panel-who::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+/* Heading */
+.panel-who h2 {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to right, #e6c36b, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;             /* Standard */
+  -webkit-background-clip: text;     /* Safari/Chrome */
+
+}
+
+/* Underline animation for heading */
+.panel-who h2::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #e6c36b;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underlineGrow 1.8s ease forwards 0.8s;
+}
+@keyframes underlineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Paragraph styling */
+.panel-who p {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.6;
+  color: #ccc;
+  max-width: 720px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.4s ease forwards 1.4s;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Orb container */
+.who-orbs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Individual orb */
+.who-orbs::before,
+.who-orbs::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,195,107,0.35), transparent 70%);
+  animation: floatOrb 45s infinite ease-in-out alternate;
+}
+
+/* Orb positions */
+.who-orbs::before {
+  top: 20%;
+  left: -80px;
+  animation: floatOrb 50s infinite ease-in-out alternate;
+}
+
+.who-orbs::after {
+  bottom: 15%;
+  right: -100px;
+  animation: floatOrb 70s infinite ease-in-out alternate;
+}
+
+
+/* Floating animation */
+@keyframes floatOrb {
+  0%   { transform: translateY(0) scale(1); opacity: 0.5; }
+  50%  { transform: translateY(-60px) scale(1.2); opacity: 0.8; }
+  100% { transform: translateY(0) scale(1); opacity: 0.4; }
+}
+/* Keep text above */
+.panel-who .content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ----------------------------
+   PANEL 3 — METHOD
+----------------------------- */
+/* --- Panel 3: Our Philosophy --- */
+.panel-philosophy {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to bottom right, #000, #111);
+  color: #fff;
+  padding: 4rem 2rem;
+}
+
+.panel-philosophy .content {
+  max-width: 900px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.6s ease forwards 0.6s;
+}
+
+.panel-philosophy h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.panel-philosophy p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #ddd;
+}
+
+/* FadeUp Animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* ----------------------------
+   PANEL 4 - INVITATION
+----------------------------- */
+.panel-invitation {
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+  color: #fff;
+}
+
+.panel-invitation .content {
+  max-width: 720px;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+/* Heading with gradient + fallback */
+.panel-invitation h2 {
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #e6c36b, #fff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* fallback color if gradient-clip is unsupported */
+  color: #e6c36b;
+}
+
+/* Paragraph — lighter for better contrast */
+.panel-invitation p {
+  font-size: clamp(16px, 2vw, 20px);
+  color: #eee;   /* brighter than #ccc */
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* Button style */
+/* Button style */
+.cta-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #e6c36b, #c6a94d);
+  color: #0a0a0a;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(230, 195, 107, 0.4);
+}
+
+
+
+/* Mini footer line */
+.footer-info {
+  margin-top: 4rem;
+  font-size: 14px;
+  color: #777;
+}
+.footer-info a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-info a:hover {
+  color: #e6c36b;
+}
+/* Social links */
+.social-links {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  font-size: 20px;
+  color: #bbb;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #e6c36b;
+  transform: translateY(-2px);
+}
+
+
+/* ----------------------------
+   UI COMPONENTS (buttons, dots, frame, etc.)
+----------------------------- */
+.next-btn, .cta-btn {
+  display:inline-block;
+  margin-top:2rem;
+  padding:.9rem 1.4rem;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.2);
+  background:transparent;
+  color:#fff;
+  text-decoration:none;
+  transition:.25s;
+  cursor: pointer;
+}
+.next-btn:hover { background:#fff; color:#000; }
+.cta-btn {
+  background:#e6c36b;
+  color:#000;
+  border:none;
+  font-weight:600;
+}
+.cta-btn:hover { filter: brightness(1.1); }
+
+.progress-dots {
+  position: fixed;
+  bottom: 18px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 10px;
+  z-index: 7000;
+}
+.dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: rgba(255,255,255,.35);
+  transition: transform .2s, background .2s;
+  cursor: pointer;
+}
+.dot.active { background: #e6c36b; transform: scale(1.15); }
+
+/* ----------------------------
+   RECORDER + COUNTDOWN
+----------------------------- */
+.countdown {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: clamp(48px, 10vw, 120px);
+  font-weight: 800;
+  background:#000;
+  z-index: 8000;
+  opacity: 1; transition: opacity .45s ease;
+}
+.countdown.hidden { opacity: 0; pointer-events: none; }
+
+.recorder-frame {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9000;
+}
+
+.rec {
+  position: absolute;
+  top: 20px;   /* was 16px */
+  left: 20px;  /* was 16px */
+  color: #ff3b3b;
+  font-weight: 700;
+  animation: blink 1s infinite;
+}
+
+.timer {
+  position: absolute;
+  top: 20px;    /* was 16px */
+  right: 20px;  /* was 16px */
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.frame-corner {
+  position: absolute;
+  width: 28px;   /* was 46px */
+  height: 28px;  /* was 46px */
+  border: 2px solid rgba(255,255,255,.85);
+}
+
+/* inset corners further in */
+.tl { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+.tr { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+.bl { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+.br { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+
+
+
+
+
+/* ----------------------------
+   ACCESSIBILITY
+----------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .about-wrapper { scroll-behavior: auto; }
+}
+/* --- PANEL 0 --- */
+.panel-0 {
+  animation: panelFadeIn 1.4s ease forwards,
+             fadeOutUp 1.6s ease forwards 6.4s;
+}
+.panel-0 .content h1 {
+  animation: fadeUp 1.4s ease forwards,
+             fadeOutUp 1.6s ease forwards 6.4s;
+}
+.panel-0 .content p {
+  animation: fadeUp 1.4s ease forwards 0.8s,
+             fadeOutUp 1.6s ease forwards 6.4s;
+}
+
+/* --- PANEL 1 --- */
+.panel-1 {
+  animation: panelFadeIn 1.4s ease forwards,
+             fadeOutLeft 1.6s ease forwards 8.4s;
+}
+.panel-1 .content h2 {
+  animation: fadeUp 1.4s ease forwards,
+             fadeOutLeft 1.6s ease forwards 8.4s;
+}
+.panel-1 .content p {
+  animation: fadeUp 1.4s ease forwards 0.6s,
+             fadeOutLeft 1.6s ease forwards 8.4s;
+}
+
+/* --- PANEL 2 --- */
+.panel-2 {
+  animation: panelFadeIn 1.4s ease forwards,
+             fadeOutRight 1.6s ease forwards 10.4s;
+}
+.panel-2 .content h2 {
+  animation: fadeUp 1.4s ease forwards,
+             fadeOutRight 1.6s ease forwards 10.4s;
+}
+.panel-2 .content p {
+  animation: fadeUp 1.4s ease forwards 0.6s,
+             fadeOutRight 1.6s ease forwards 10.4s;
+}
+
+/* --- PANEL 3 --- */
+.panel-3 {
+  animation: panelFadeIn 1.4s ease forwards,
+             fadeOutZoom 1.6s ease forwards 7.4s;
+}
+.panel-3 .content h2 {
+  animation: fadeUp 1.4s ease forwards,
+             fadeOutZoom 1.6s ease forwards 7.4s;
+}
+.panel-3 .content p {
+  animation: fadeUp 1.4s ease forwards 0.6s,
+             fadeOutZoom 1.6s ease forwards 7.4s;
+}
+@keyframes panelFadeIn {
+  from { opacity: 0; transform: scale(1.05); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeOutUp {
+  to { opacity: 0; transform: translateY(-40px) scale(0.95); }
+}
+@keyframes fadeOutLeft {
+  to { opacity: 0; transform: translateX(-40px) scale(0.95); }
+}
+@keyframes fadeOutRight {
+  to { opacity: 0; transform: translateX(40px) scale(0.95); }
+}
+@keyframes fadeOutZoom {
+  to { opacity: 0; transform: scale(0.8); }
+}
+
+/* Footer Base */
+.site-footer {
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #fff;
+  padding: 5rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center grid vertically */
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Animated shimmer background */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+  animation: shimmer 15s infinite linear;
+  z-index: 0;
+}
+@keyframes shimmer {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(50%,50%); }
+}
+
+/* Footer Grid (centered content) */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 1;
+  text-align: left;
+}
+
+/* Brand */
+.footer-brand h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-family: "Georgia", serif;
+}
+.footer-brand p {
+  opacity: 0.7;
+  font-size: 0.95rem;
+}
+
+/* Links */
+.footer-links h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+.footer-links a {
+  display: block;
+  margin: 0.4rem 0;
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.75;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* Newsletter */
+.footer-newsletter h4 { margin-bottom: 0.6rem; }
+.footer-newsletter p { opacity: 0.7; margin-bottom: 1rem; }
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+}
+.newsletter-form input {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+.newsletter-form input:focus {
+  outline: 2px solid #fff;
+}
+.newsletter-form button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.newsletter-form button:hover {
+  background: #ddd;
+}
+
+/* Socials */
+.footer-social h4 { margin-bottom: 1rem; }
+.social-icons-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.icon-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.icon-circle img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+.icon-circle:hover {
+  background: #fff;
+  box-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+.icon-circle:hover img {
+  filter: invert(0);
+}
+.footer-social span {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: auto; /* stick to bottom */
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  z-index: 1;
+  width: 100%;
+}
+
+/* Make footer panel full screen */
+.panel-footer {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+}
