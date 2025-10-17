@@ -1,8 +1,3 @@
-/* ───────────────────────────────
-   MACKOUT BRANDS – SERVICES PAGE
-   Cinematic Multi-Panel Experience (Footer-safe)
-──────────────────────────────────*/
-
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof gsap === 'undefined') {
     console.error('GSAP not loaded!');
@@ -10,28 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const container = document.querySelector('.services-container');
-  // ✅ Only target panels that are NOT the footer
-  const panels = Array.from(container.querySelectorAll(':scope > .panel:not(#footer-placeholder)'));
+  const panels = Array.from(container.querySelectorAll(':scope > .panel'));
   const nextBtn = document.getElementById('nextPanel');
   const prevBtn = document.getElementById('prevPanel');
 
   let currentIndex = 0;
   let tl;
-  let restartTimer;
 
-  // ───────────────────────────────
-  // 🔹 PANEL WIDTH SETUP
-  // ───────────────────────────────
   function setWidths() {
     const vw = window.innerWidth;
     panels.forEach(p => p.style.width = vw + 'px');
     container.style.width = (vw * panels.length) + 'px';
   }
 
-  // ───────────────────────────────
-  // 🔹 MANUAL PANEL NAVIGATION
-  // ───────────────────────────────
-  function goToPanel(index, duration = 1.2) {
+  function goToPanel(index, duration = 1) {
     if (index < 0) index = panels.length - 1;
     if (index >= panels.length) index = 0;
     currentIndex = index;
@@ -39,21 +26,24 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.to(container, { x, duration, ease: "power2.inOut" });
   }
 
-  // ───────────────────────────────
-  // 🔹 AUTOPLAY TIMELINE
-  // ───────────────────────────────
   function buildTimeline() {
     if (tl) tl.kill();
-
     setWidths();
 
-    const stay = 3.5;   // hold time per panel
-    const slide = 1.2;  // slide duration
+    const stay = 3.5;
+    const slide = 1.2;
+    const overlay = document.querySelector('.fade-overlay') || (() => {
+      const el = document.createElement("div");
+      el.classList.add("fade-overlay");
+      document.body.appendChild(el);
+      return el;
+    })();
 
     tl = gsap.timeline({ repeat: -1, defaults: { ease: 'power2.inOut' } });
 
-    panels.forEach((_, i) => {
-      tl.to({}, { duration: stay }); // hold each panel
+    // Go through each panel except the last one normally
+    panels.forEach((panel, i) => {
+      tl.to({}, { duration: stay });
       if (i < panels.length - 1) {
         const x = -(i + 1) * window.innerWidth;
         tl.to(container, {
@@ -64,16 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Last panel → pause then jump back
-    tl.to({}, { duration: stay });
+    // ✅ At footer (last panel)
+    tl.to({}, { duration: stay }); // hold footer
+    tl.to(overlay, { opacity: 1, duration: 1.2, ease: "power2.inOut" }); // fade to black
+
+    // Instantly reset position to first panel behind the black overlay
     tl.set(container, { x: 0, onStart: () => { currentIndex = 0; } });
+
+    // Fade back in to reveal the first panel
+    tl.to(overlay, { opacity: 0, duration: 1.2, ease: "power2.inOut" });
   }
 
   buildTimeline();
 
-  // ───────────────────────────────
-  // 🔹 ARROW CONTROLS
-  // ───────────────────────────────
+  // Manual controls
   if (nextBtn && prevBtn) {
     nextBtn.addEventListener('click', () => {
       tl.pause();
@@ -88,48 +82,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ───────────────────────────────
-  // 🔹 AUTOPLAY RESTART
-  // ───────────────────────────────
+  // Restart autoplay after manual use
+  let restartTimer;
   function restartAutoplay() {
     clearTimeout(restartTimer);
     restartTimer = setTimeout(() => tl.restart(), 6000);
   }
 
-  // ───────────────────────────────
-  // 🔹 RESIZE HANDLER
-  // ───────────────────────────────
+  // Recalculate on resize
   let rt;
   window.addEventListener('resize', () => {
     clearTimeout(rt);
     rt = setTimeout(buildTimeline, 200);
   });
-
-  // ───────────────────────────────
-  // 🔹 ACCORDION LOGIC
-  // ───────────────────────────────
-  const serviceHeaders = document.querySelectorAll('.service-header');
-
-  serviceHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-      const service = header.closest('.service');
-      const isOpen = service.classList.contains('open');
-
-      // Pause GSAP while user interacts
-      if (tl && tl.isActive()) tl.pause();
-
-      // Close all accordions first
-      document.querySelectorAll('.service').forEach(s => s.classList.remove('open'));
-
-      // Toggle clicked one
-      if (!isOpen) service.classList.add('open');
-
-      // Restart autoplay after 6 seconds of inactivity
-      clearTimeout(restartTimer);
-      restartTimer = setTimeout(() => {
-        if (tl && !tl.isActive()) tl.resume();
-      }, 6000);
-    });
-  });
-
 });
